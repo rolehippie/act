@@ -1,0 +1,16 @@
+# Standards: 1.2
+---
+- name: Download act release
+  unarchive:
+    src: "{{ act_download }}"
+    dest: "{{ act_path }}"
+    include:
+      - act
+    remote_src: True
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
+  tags:
+    - act
+
+...

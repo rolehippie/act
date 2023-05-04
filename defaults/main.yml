@@ -1,0 +1,16 @@
+# Standards: 1.2
+---
+# @var act_version:description: Version of act binary to install
+# renovate: datasource=github-releases depName=nektos/act
+act_version: 0.2.45
+
+# @var act_arch:description: Architecture for act binary
+act_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'x86_64' }}"
+
+# @var act_download:description: URL to download act binary from
+act_download: "https://github.com/nektos/act/releases/download/v{{ act_version }}/act_Linux_{{ act_arch }}.tar.gz"
+
+# @var act_path:description: Path to install the binaries
+act_path: /usr/bin
+
+...
