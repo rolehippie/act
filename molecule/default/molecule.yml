@@ -50,7 +50,4 @@ provisioner:
     ANSIBLE_FILTER_PLUGINS: "${ANSIBLE_FILTER_PLUGINS:-./plugins/filter}"
     ANSIBLE_LIBRARY: "${ANSIBLE_LIBRARY:-./library}"
 
-verifier:
-  name: testinfra
-
 ...
