@@ -2,3 +2,4 @@ ansible
 docker
 molecule
 molecule-plugins[docker]
+pytest-testinfra
