@@ -2,19 +2,26 @@
 name: general
 
 "on":
+  workflow_dispatch:
   push:
     branches:
       - master
   pull_request:
     branches:
       - master
-  workflow_dispatch:
 
 jobs:
   linting:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Update gitboard
+        uses: gitboard-io/gitboard-action@main
+        if: github.event_name != 'pull_request'
+        with:
+          username: ${{ secrets.GITBOARD_USERNAME }}
+          key: ${{ secrets.GITBOARD_KEY }}
+
       - name: Checkout source
         uses: actions/checkout@v3
 
@@ -32,6 +39,13 @@ jobs:
           - default
 
     steps:
+      - name: Update gitboard
+        uses: gitboard-io/gitboard-action@main
+        if: github.event_name != 'pull_request'
+        with:
+          username: ${{ secrets.GITBOARD_USERNAME }}
+          key: ${{ secrets.GITBOARD_KEY }}
+
       - name: Checkout source
         uses: actions/checkout@v3
 

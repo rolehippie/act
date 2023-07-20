@@ -2,22 +2,26 @@
 name: release
 
 "on":
+  workflow_dispatch:
   schedule:
     - cron: "0 8 * * 1"
-  workflow_dispatch:
 
 jobs:
   release:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Update gitboard
+        uses: gitboard-io/gitboard-action@main
+        if: github.event_name != 'pull_request'
+        with:
+          username: ${{ secrets.GITBOARD_USERNAME }}
+          key: ${{ secrets.GITBOARD_KEY }}
+
       - name: Checkout source
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.BOT_ACCESS_TOKEN }}
-
-      - name: Write buildtime
-        run: date >| .github/RELEASEDATE
 
       - name: Semantic release
         uses: cycjimmy/semantic-release-action@v3
@@ -26,6 +30,9 @@ jobs:
         with:
           extra_plugins: |
             conventional-changelog-conventionalcommits
+
+      - name: Write buildtime
+        run: date >| .github/RELEASEDATE
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
