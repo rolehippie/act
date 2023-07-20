@@ -17,6 +17,22 @@
     ],
     "packageRules": [
         {
+            "description": "Build tool version upgrades",
+            "groupName": "build tools",
+            "matchPackageNames": [
+                "actionhippie/ansible-doctor",
+                "actionhippie/ansible-later",
+                "actions/checkout",
+                "actions/setup-python",
+                "cycjimmy/semantic-release-action",
+                "EndBug/add-and-commit",
+                "robertdebock/galaxy-action"
+            ],
+            "semanticCommitType": "ci",
+            "semanticCommitScope": "tools",
+            "automerge": true
+        },
+        {
             "description": "Strip v prefix from versions",
             "groupName": "version prefix",
             "matchDatasources": [
