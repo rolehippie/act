@@ -9,6 +9,7 @@ name: release
 jobs:
   release:
     runs-on: ubuntu-latest
+    if: github.repository_owner == 'rolehippie'
 
     steps:
       - name: Checkout source
