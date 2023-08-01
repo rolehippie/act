@@ -2,7 +2,7 @@
 ---
 # @var act_version:description: Version of act binary to install
 # renovate: datasource=github-releases depName=nektos/act
-act_version: 0.2.48
+act_version: 0.2.49
 
 # @var act_arch:description: Architecture for act binary
 act_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'x86_64' }}"
