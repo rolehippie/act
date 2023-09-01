@@ -72,7 +72,7 @@ Version of act binary to install
 #### Default value
 
 ```YAML
-act_version: 0.2.49
+act_version: 0.2.50
 ```
 
 ## Discovered Tags
