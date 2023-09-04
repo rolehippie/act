@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/rolehippie/act/compare/v1.0.3...v1.0.4) (2023-09-04)
+
+
+### Bugfixes
+
+* **deps:** update dependency nektos/act to v0.2.50 ([367f0fb](https://github.com/rolehippie/act/commit/367f0fbc94d7943699c979a685a36b7cc5d636de))
+
 ## [1.0.3](https://github.com/rolehippie/act/compare/v1.0.2...v1.0.3) (2023-08-07)
 
 
